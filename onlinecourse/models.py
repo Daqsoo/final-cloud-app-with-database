@@ -107,6 +107,7 @@ def is_get_score(self, selected_ids):
 
 # class Choice(models.Model):
 class Choice(models.Model):
+    question = models.ManyToManyField(Question)
     question = models.ForeignKey(Question, on_delete= models.CASCADE)
     choice_text = models.TextField()
     is_correct = models.BooleanField(default = False)
